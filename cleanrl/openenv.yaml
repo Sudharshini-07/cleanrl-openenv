@@ -1,0 +1,58 @@
+name: cleanrl-data-cleaning-env
+version: "1.0.0"
+description: >
+  RL environment for learning data cleaning workflows on tabular datasets.
+  Designed to simulate real-world data preprocessing tasks.
+
+author: "Sudharshini07"
+license: MIT
+
+tags:
+  - openenv
+  - data-cleaning
+  - reinforcement-learning
+  - tabular
+
+environment:
+  class: DataCleaningEnv
+  module: environment
+  entry_point: "cleanrl/environment.py"
+
+tasks:
+  - id: easy
+    difficulty: easy
+    description: "Clean dataset with 5 known issues"
+    max_steps: 15
+    target_score: 1.0
+
+  - id: medium
+    difficulty: medium
+    description: "Clean dataset with hidden issues"
+    max_steps: 20
+    target_score: 1.0
+
+  - id: hard
+    difficulty: hard
+    description: "Clean dataset with multiple hidden issues"
+    max_steps: 25
+    target_score: 1.0
+
+observation_space:
+  type: object
+  schema: DatasetStats
+
+action_space:
+  type: object
+  schema: Action
+
+reward:
+  range: [-1.0, 1.0]
+  shaped: true
+  description: >
+    Incremental reward per correct fix, step penalty,
+    invalid action penalty, and final score.
+
+baseline_score:
+  easy: 0.80
+  medium: 0.83
+  hard: 1.00
