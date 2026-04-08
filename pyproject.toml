@@ -1,7 +1,12 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+
 [project]
 name = "cleanrl-openenv"
 version = "0.1.0"
-description = "OpenEnv RL environment for real-world data cleaning tasks"
+description = "OpenEnv RL environment for data cleaning"
 authors = [
     { name = "Sudharshini" },
     { name = "Yukesh K" },
@@ -9,9 +14,6 @@ authors = [
 ]
 readme = "README.md"
 requires-python = ">=3.9"
-
-[project.scripts]
-server = "server.app:app"
 
 dependencies = [
     "pandas",
@@ -25,3 +27,12 @@ dependencies = [
     "openai",
     "openenv-core>=0.2.0"
 ]
+
+
+[project.scripts]
+server = "server.app:app"
+
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["cleanrl*"]
