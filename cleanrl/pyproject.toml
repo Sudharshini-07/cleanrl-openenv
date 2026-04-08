@@ -1,0 +1,27 @@
+[project]
+name = "cleanrl-openenv"
+version = "0.1.0"
+description = "OpenEnv RL environment for real-world data cleaning tasks"
+authors = [
+    { name = "Sudharshini" },
+    { name = "Yukesh K" },
+    { name = "Shreya S" }
+]
+readme = "README.md"
+requires-python = ">=3.9"
+
+[project.scripts]
+server = "server.app:app"
+
+dependencies = [
+    "pandas",
+    "numpy",
+    "pydantic",
+    "fastapi",
+    "uvicorn",
+    "scikit-learn",
+    "scipy",
+    "pyyaml",
+    "openai",
+    "openenv-core>=0.2.0"
+]
