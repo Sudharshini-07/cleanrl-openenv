@@ -1,7 +1,7 @@
+%%writefile pyproject.toml
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
-
 
 [project]
 name = "cleanrl-openenv"
@@ -28,10 +28,8 @@ dependencies = [
     "openenv-core>=0.2.0"
 ]
 
-
 [project.scripts]
 server = "server.app:app"
-
 
 [tool.setuptools.packages.find]
 where = ["."]
