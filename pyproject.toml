@@ -13,7 +13,7 @@ authors = [
     { name = "Shreya S" }
 ]
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 
 dependencies = [
     "pandas",
